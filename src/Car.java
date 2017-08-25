@@ -21,4 +21,6 @@ public class Car {
     public String getName(){ return this.name; }
 
     public int getDistanceTraveled(){ return this.distanceTraveled; }
+    
+    public void moveForAnHour(){ this.distanceTraveled = this.distanceTraveled + this.speed; }
 }

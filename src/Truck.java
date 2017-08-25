@@ -8,7 +8,7 @@
 
 public class Truck {
 
-    int speed, breakDownTurnLeft;
+    int speed, breakDownTurnLeft, distanceTraveled;
     String name;
 
 
@@ -33,4 +33,6 @@ public class Truck {
     public void setSpeed(){
         this.speed = 100;
     }
+
+    public void moveForAnHour(){ this.distanceTraveled = this.distanceTraveled + this.speed; }
 }

@@ -33,5 +33,6 @@ public class Motorcycle {
         this.speed = 100;
     }
 
+    public void moveForAnHour(){ this.distanceTraveled = this.distanceTraveled + this.speed; }
 
 }
