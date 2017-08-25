@@ -11,16 +11,18 @@
 
 public class Car {
 
-    int speed, distanceTraveled;
+    int speed, distanceTraveled, normalSpeed;
     String name;
 
-    public void setNormalSpeed(int speed){ this.speed = speed; }
+    public void setNormalSpeed(int speed){ this.normalSpeed = speed; this.speed = speed; }
+
+    public void setTooFast(){ this.speed = 70; }
 
     public void setName(String name){ this.name = name; }
 
     public String getName(){ return this.name; }
 
     public int getDistanceTraveled(){ return this.distanceTraveled; }
-    
+
     public void moveForAnHour(){ this.distanceTraveled = this.distanceTraveled + this.speed; }
 }
