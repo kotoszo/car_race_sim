@@ -25,14 +25,13 @@ public class Truck {
         this.breakDownTurnLeft = 2;
     }
 
-    public int getBreakDownTurnLeft(){
-        this.breakDownTurnLeft -= 1;
-        return getBreakDownTurnLeft();
-    }
+    public void decreaseBreakDownTurnLeft(){ this.breakDownTurnLeft -= 1; }
 
-    public void setSpeed(){
-        this.speed = 100;
-    }
+    public void setSpeed(){ this.speed = 100; }
 
     public void moveForAnHour(){ this.distanceTraveled = this.distanceTraveled + this.speed; }
+
+    public int getDistanceTraveled(){
+        return distanceTraveled;
+    }
 }
