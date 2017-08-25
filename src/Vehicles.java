@@ -1,18 +1,29 @@
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Random;
+
 public class Vehicles {
 
     Car[] carList;
     Motorcycle[] bikeList;
     Truck[] truckList;
+    Random random;
 
     public void createVehicles(){
-        Cars();
-        Motorcycles();
-        Trucks();
+        this.random = new Random();
+        initCars();
+        setCars();
+
+        initMotorcycles();
+        setMotorcycles();
+
+        initTrucks();
+        setTrucks();
     }
 
     // should it be, setCars? and with getCars reach the carList?
 
-    private void Cars(){
+    private void initCars(){
         Car car1 = new Car();
         Car car2 = new Car();
         Car car3 = new Car();
@@ -27,7 +38,33 @@ public class Vehicles {
         this.carList = carList;
     }
 
-    private void Motorcycles(){
+        private void setCars(){
+            HashSet<Integer> indexes = new HashSet<>();
+            String[] carsFirstName = new String[] {"Crest", "Blade", "Specter", "Conqueror", "Freedom", "Dominion",
+                    "Majesty", "Vision", "Renegade", "Origin", "Eminance", "Motive", "Eon", "Tigress", "Twister",
+                    "Legend", "Alabaster", "Realm", "Expedition", "Ranger", "Patron", "Momentum", "Deputy", "Mastery",
+                    "Paradox", "Vagabond", "Shadow", "Inquiry", "Inferno"};
+            String[] carsSecondName = new String[] {"Oracle", "Supremacy", "Thriller", "Viper", "Formula", "Vindicator",
+                    "Mastery", "Augury", "Ferocity", "Silver", "Freedom", "Barrage", "Triumph", "Freedom", "Meridian",
+                    "Paladin", "Capital", "Passion", "Vortex", "Intro", "Obsidian", "Fragment", "Albatross", "Encounter",
+                    "Twister", "Freedom", "Bolt", "Phenomenom", "Escape", "Renegade"};
+
+            do {
+                int index = random.nextInt(carsFirstName.length-1);
+                indexes.add(index);
+            } while(indexes.size() < 10);
+
+            Iterator<Integer> it = indexes.iterator();
+
+            for (Car car: carList) {
+                int nameIndex = it.next();
+                String fullName = carsFirstName[nameIndex] + carsSecondName[nameIndex];
+                car.setNormalSpeed(random.nextInt(110-80)+80);
+                car.setName(fullName);
+        }
+    }
+
+    private void initMotorcycles(){
         Motorcycle bike1 = new Motorcycle();
         Motorcycle bike2 = new Motorcycle();
         Motorcycle bike3 = new Motorcycle();
@@ -42,7 +79,14 @@ public class Vehicles {
         this.bikeList = bikeList;
     }
 
-    private void Trucks(){
+    private void setMotorcycles(){
+        int Nr = 1;
+        for (Motorcycle bike: bikeList) {
+            bike.setName(Nr++);
+        }
+    }
+
+    private void initTrucks(){
         Truck truck1 = new Truck();
         Truck truck2 = new Truck();
         Truck truck3 = new Truck();
@@ -55,6 +99,12 @@ public class Vehicles {
         Truck truck10 = new Truck();
         Truck[] truckList = new Truck[]{truck1, truck2, truck3, truck4, truck5, truck6, truck7, truck8, truck9, truck10};
         this.truckList = truckList;
+    }
+
+    private void setTrucks(){
+        for (Truck truck: truckList) {
+            truck.setName(random.nextInt(1000));
+        }
     }
 
 }
