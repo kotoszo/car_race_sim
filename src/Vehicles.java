@@ -2,9 +2,17 @@ public class Vehicles {
 
     Car[] carList;
     Motorcycle[] bikeList;
-    Trucks[] truckList;
+    Truck[] truckList;
 
-    public void Cars(){
+    public void createVehicles(){
+        Cars();
+        Motorcycles();
+        Trucks();
+    }
+
+    // should it be, setCars? and with getCars reach the carList?
+
+    private void Cars(){
         Car car1 = new Car();
         Car car2 = new Car();
         Car car3 = new Car();
@@ -19,7 +27,7 @@ public class Vehicles {
         this.carList = carList;
     }
 
-    public void Motorcycles(){
+    private void Motorcycles(){
         Motorcycle bike1 = new Motorcycle();
         Motorcycle bike2 = new Motorcycle();
         Motorcycle bike3 = new Motorcycle();
@@ -34,7 +42,7 @@ public class Vehicles {
         this.bikeList = bikeList;
     }
 
-    public void Trucks(){
+    private void Trucks(){
         Truck truck1 = new Truck();
         Truck truck2 = new Truck();
         Truck truck3 = new Truck();
