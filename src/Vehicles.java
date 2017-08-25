@@ -2,6 +2,7 @@ public class Vehicles {
 
     Car[] carList;
     Motorcycle[] bikeList;
+    Trucks[] truckList;
 
     public void Cars(){
         Car car1 = new Car();
@@ -31,6 +32,21 @@ public class Vehicles {
         Motorcycle bike10 = new Motorcycle();
         Motorcycle[] bikeList = new Motorcycle[]{bike1, bike2, bike3, bike4, bike5, bike6, bike7, bike8, bike9, bike10};
         this.bikeList = bikeList;
+    }
+
+    public void Trucks(){
+        Truck truck1 = new Truck();
+        Truck truck2 = new Truck();
+        Truck truck3 = new Truck();
+        Truck truck4 = new Truck();
+        Truck truck5 = new Truck();
+        Truck truck6 = new Truck();
+        Truck truck7 = new Truck();
+        Truck truck8 = new Truck();
+        Truck truck9 = new Truck();
+        Truck truck10 = new Truck();
+        Truck[] truckList = new Truck[]{truck1, truck2, truck3, truck4, truck5, truck6, truck7, truck8, truck9, truck10};
+        this.truckList = truckList;
     }
 
 }
