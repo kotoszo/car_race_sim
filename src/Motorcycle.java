@@ -21,17 +21,11 @@ public class Motorcycle {
         return this.name;
     }
 
-    public void setDistanceTraveled() {
-        this.distanceTraveled = distanceTraveled+speed;
-    }
-
     public int getDistanceTraveled(){
         return distanceTraveled;
     }
 
-    public void setSpeed(){
-        this.speed = 100;
-    }
+    public void setSpeed(boolean isRaining){ this.speed = (isRaining)? 0: 100; }
 
     public void moveForAnHour(){ this.distanceTraveled = this.distanceTraveled + this.speed; }
 
