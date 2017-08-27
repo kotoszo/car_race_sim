@@ -11,12 +11,11 @@
 
 public class Car {
 
-    int speed, distanceTraveled, normalSpeed;
+    int normalSpeed, distanceTraveled;
     String name;
+    static int speedLimit;
 
-    public void setNormalSpeed(int speed){ this.normalSpeed = speed; this.speed = speed; }
-
-    public void setTooFast(){ this.speed = 70; }
+    public void setNormalSpeed(int speed){ this.normalSpeed = speed; }
 
     public void setName(String name){ this.name = name; }
 
@@ -24,5 +23,14 @@ public class Car {
 
     public int getDistanceTraveled(){ return this.distanceTraveled; }
 
-    public void moveForAnHour(){ this.distanceTraveled = this.distanceTraveled + this.speed; }
+    public void moveForAnHour(){
+        if (Main.isRaining){
+            this.distanceTraveled = this.distanceTraveled + speedLimit;
+        } else {
+            this.distanceTraveled = this.distanceTraveled + this.normalSpeed;
+        }
+    }
+
+    public static void setSpeedLimit(int limit) { speedLimit = limit; }
+
 }

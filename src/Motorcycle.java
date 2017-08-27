@@ -25,7 +25,7 @@ public class Motorcycle {
         return distanceTraveled;
     }
 
-    public void setSpeed(boolean isRaining){ this.speed = (isRaining)? 0: 100; }
+    public void setSpeed(boolean isRaining, int speedLimit){ this.speed = (isRaining)? 100-speedLimit: 100; }
 
     public void moveForAnHour(){ this.distanceTraveled = this.distanceTraveled + this.speed; }
 

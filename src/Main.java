@@ -24,17 +24,19 @@ public class Main {
     public static void simulateRace(Vehicles vehicles){
         Random randomChance = new Random();
         for (int hours = 0; hours < 50; hours++) {
-            isRaining = randomChance.nextInt(100) <= 30;
             for (Car car: vehicles.carList) {
+                isRaining = randomChance.nextInt(100) <= 30;
                 if (isRaining){
-                    car.setTooFast();
+                    Car.setSpeedLimit(70);
                 } else {
-                    car.setNormalSpeed(car.normalSpeed);
-                    car.moveForAnHour();
+                    car.setNormalSpeed(randomChance.nextInt(110-80)+80);
                 }
+                System.out.printf("Name %s      distance: %s\n", car.getName(), car.getDistanceTraveled());
+                car.moveForAnHour();
             }
             for (Motorcycle bike: vehicles.bikeList) {
-                bike.setSpeed(isRaining);
+                isRaining = randomChance.nextInt(100) <= 30;
+                bike.setSpeed(isRaining, randomChance.nextInt(45)+5);
                 bike.moveForAnHour();
             }
             for (Truck truck: vehicles.truckList) {

@@ -11,8 +11,6 @@ public class Truck {
     int speed, breakDownTurnLeft, distanceTraveled;
     String name;
 
-
-
     public void setName(int nameNumber){
         this.name = Integer.toString(nameNumber);
     }
