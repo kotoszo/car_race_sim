@@ -6,9 +6,28 @@
  moveForAnHour()
  */
 
-public class Truck {
+public class Truck extends Vehicle{
 
-    int speed, breakDownTurnLeft, distanceTraveled;
+    private int breakDownTurnLeft;
+    private final int breakDownTurn = 2;
+
+    public void setName(int number){ this.name = Integer.toString(number); }
+
+    @Override
+    public void moveForAnHour() { this.distanceTraveled = this.distanceTraveled + this.speed; }
+
+    public void decreaseBreakDownTurnLeft(){ this.breakDownTurnLeft -= 1; }
+
+    public void setBreakDownTurnLeft() {
+        this.breakDownTurnLeft = breakDownTurn;
+    }
+
+    public int getBreakDownTurnLeft() { return breakDownTurnLeft; }
+
+    //public void setSpeed(int speed) {this.speed = speed; }
+
+
+    /*int speed, breakDownTurnLeft, distanceTraveled;
     String name;
 
     public void setName(int nameNumber){
@@ -31,5 +50,5 @@ public class Truck {
 
     public int getDistanceTraveled(){
         return distanceTraveled;
-    }
+    }*/
 }

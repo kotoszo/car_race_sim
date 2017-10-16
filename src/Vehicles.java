@@ -50,7 +50,7 @@ public class Vehicles {
             for (Car car: carList) {
                 int nameIndex = it.next();
                 String fullName = carsFirstName[nameIndex] + carsSecondName[nameIndex];
-                car.setNormalSpeed(random.nextInt(110-80)+80);
+                car.setSpeed(random.nextInt(110-80)+80);
                 car.setName(fullName);
         }
     }

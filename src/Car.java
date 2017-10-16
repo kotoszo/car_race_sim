@@ -9,9 +9,27 @@
  moveForAnHour() // The vehicle travels for an hour. It increases the distance traveled. Call this from the main class only!
  */
 
-public class Car {
+public class Car extends Vehicle{
 
-    int normalSpeed, distanceTraveled;
+    private int speedLimit;
+    private int normalSpeed;
+
+    public void setName(String name){ this.name = name; }
+
+    @Override
+    public void moveForAnHour() {
+        if (Main.isRaining){
+            this.distanceTraveled = this.distanceTraveled + speedLimit;
+        } else {
+            this.distanceTraveled = this.distanceTraveled + this.normalSpeed;
+        }
+    }
+
+    public void setSpeedLimit(int speedLimit) { this.speedLimit = speedLimit; }
+
+    //public void setNormalSpeed(int speed) { this.speed = speed; }
+
+    /*int normalSpeed, distanceTraveled;
     String name;
     static int speedLimit;
 
@@ -31,6 +49,6 @@ public class Car {
         }
     }
 
-    public static void setSpeedLimit(int limit) { speedLimit = limit; }
+    public static void setSpeedLimit(int limit) { speedLimit = limit; }*/
 
 }

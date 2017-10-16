@@ -15,6 +15,8 @@ public class Main {
 
     public static void main(String[] args){
 
+
+
         Vehicles vehicles = new Vehicles();
         vehicles.createVehicles();
         simulateRace(vehicles);
@@ -27,11 +29,10 @@ public class Main {
             for (Car car: vehicles.carList) {
                 isRaining = randomChance.nextInt(100) <= 30;
                 if (isRaining){
-                    Car.setSpeedLimit(70);
+                    car.setSpeedLimit(70);
                 } else {
-                    car.setNormalSpeed(randomChance.nextInt(110-80)+80);
+                    car.setSpeed(randomChance.nextInt(110-80)+80);
                 }
-                System.out.printf("Name %s      distance: %s\n", car.getName(), car.getDistanceTraveled());
                 car.moveForAnHour();
             }
             for (Motorcycle bike: vehicles.bikeList) {
@@ -40,13 +41,13 @@ public class Main {
                 bike.moveForAnHour();
             }
             for (Truck truck: vehicles.truckList) {
-                if (truck.breakDownTurnLeft > 0) {
+                if (truck.getBreakDownTurnLeft() > 0) {
                     truck.decreaseBreakDownTurnLeft();
                 } else {
                     if (randomChance.nextInt(100) <= 5){
                         truck.setBreakDownTurnLeft();
                     } else {
-                        truck.setSpeed();
+                        truck.setSpeed(100);
                         truck.moveForAnHour();
                     }
                 }
