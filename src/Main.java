@@ -15,15 +15,14 @@ public class Main {
 
     public static void main(String[] args){
 
-
-
-        Vehicles vehicles = new Vehicles();
-        vehicles.createVehicles();
+        Vehicles vehicles = Vehicles.getInstance();
+        VehicleFactory.howManyVehicle(10);
+        VehicleFactory.getAll();
         simulateRace(vehicles);
         printResult(vehicles);
     }
 
-    public static void simulateRace(Vehicles vehicles){
+    private static void simulateRace(Vehicles vehicles){
         Random randomChance = new Random();
         for (int hours = 0; hours < 50; hours++) {
             for (Car car: vehicles.carList) {
@@ -37,7 +36,7 @@ public class Main {
             }
             for (Motorcycle bike: vehicles.bikeList) {
                 isRaining = randomChance.nextInt(100) <= 30;
-                bike.setSpeed(isRaining, randomChance.nextInt(45)+5);
+                bike.setSpeed(randomChance.nextInt(45)+5);
                 bike.moveForAnHour();
             }
             for (Truck truck: vehicles.truckList) {
@@ -55,7 +54,7 @@ public class Main {
         }
     }
 
-    public static void printResult(Vehicles vehicles){
+    private static void printResult(Vehicles vehicles){
         for (Car car: vehicles.carList) {
             System.out.printf("Name %s      distance: %s\n", car.getName(), car.getDistanceTraveled());
         }

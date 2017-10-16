@@ -11,44 +11,15 @@ public class Truck extends Vehicle{
     private int breakDownTurnLeft;
     private final int breakDownTurn = 2;
 
-    public void setName(int number){ this.name = Integer.toString(number); }
+    void setName(int number){ this.name = Integer.toString(number); }
 
     @Override
     public void moveForAnHour() { this.distanceTraveled = this.distanceTraveled + this.speed; }
 
-    public void decreaseBreakDownTurnLeft(){ this.breakDownTurnLeft -= 1; }
+    void decreaseBreakDownTurnLeft(){ this.breakDownTurnLeft -= 1; }
 
-    public void setBreakDownTurnLeft() {
-        this.breakDownTurnLeft = breakDownTurn;
-    }
+    void setBreakDownTurnLeft() { this.breakDownTurnLeft = breakDownTurn; }
 
-    public int getBreakDownTurnLeft() { return breakDownTurnLeft; }
+    int getBreakDownTurnLeft() { return breakDownTurnLeft; }
 
-    //public void setSpeed(int speed) {this.speed = speed; }
-
-
-    /*int speed, breakDownTurnLeft, distanceTraveled;
-    String name;
-
-    public void setName(int nameNumber){
-        this.name = Integer.toString(nameNumber);
-    }
-
-    public String getName(){
-        return this.name;
-    }
-
-    public void setBreakDownTurnLeft() {
-        this.breakDownTurnLeft = 2;
-    }
-
-    public void decreaseBreakDownTurnLeft(){ this.breakDownTurnLeft -= 1; }
-
-    public void setSpeed(){ this.speed = 100; }
-
-    public void moveForAnHour(){ this.distanceTraveled = this.distanceTraveled + this.speed; }
-
-    public int getDistanceTraveled(){
-        return distanceTraveled;
-    }*/
 }

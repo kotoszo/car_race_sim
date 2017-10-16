@@ -6,26 +6,16 @@
  moveForAnHour()
  */
 
-public class Motorcycle {
+public class Motorcycle extends Vehicle {
 
-    int speed, distanceTraveled;
     static int nameNumber;
-    String name;
 
-    public void setName(int Number){
+    void setName(int Number){
         nameNumber = Number;
         this.name = "Motorcycle " + nameNumber;
     }
 
-    public String getName(){
-        return this.name;
-    }
-
-    public int getDistanceTraveled(){
-        return distanceTraveled;
-    }
-
-    public void setSpeed(boolean isRaining, int speedLimit){ this.speed = (isRaining)? 100-speedLimit: 100; }
+    public void setSpeed(int speedLimit){ this.speed = (Main.isRaining)? 100-speedLimit: 100; }
 
     public void moveForAnHour(){ this.distanceTraveled = this.distanceTraveled + this.speed; }
 
